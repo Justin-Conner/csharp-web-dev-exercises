@@ -30,13 +30,10 @@ namespace Classes_Part_2
         // TODO: Complete the AddGrade method.
         public void AddGrade(int courseCredits, double grade)
         {
-            {
-                // Update the appropriate properties: NumberOfCredits, Gpa
-                double totalQualityScore = Gpa * NumberOfCredits;
-                totalQualityScore += courseCredits * grade;
-                NumberOfCredits += courseCredits;
-                Gpa = totalQualityScore / NumberOfCredits;
-            }
+            double totalQualityScore = Gpa * NumberOfCredits;
+            totalQualityScore += courseCredits * grade;
+            NumberOfCredits += courseCredits;
+            Gpa = totalQualityScore / NumberOfCredits;
 
         }
 
@@ -44,24 +41,24 @@ namespace Classes_Part_2
         public string GetGradeLevel(int credits)
         {
             // Determine the grade level of the student based on NumberOfCredits
+            if (credits <= 29)
+            {
+                return "Freshman";
+            }
+            else if (credits <= 59)
+            {
+                return "Sophomore";
+            }
+            else if (credits <= 89)
+            {
+                return "Junior";
+            }
+            else
+            {
+                return "Senior";
+            }
 
-                if (credits <= 29)
-                {
-                    return "Freshman";
-                }
-                else if (credits <= 59)
-                {
-                    return "Sophomore";
-                }
-                else if (credits <= 89)
-                {
-                    return "Junior";
-                }
-                else
-                {
-                    return "Senior";
-                }
-            
+
         }
 
         // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather
